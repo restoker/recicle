@@ -369,8 +369,9 @@ export default function Home() {
             </svg>
           </div>
           <div className="mx-auto max-w-md px-6 sm:max-w-3xl lg:max-w-7xl lg:px-8">
-            <div className="relative overflow-hidden rounded-2xl bg-lime-500 px-6 py-10 shadow-xl sm:px-12 sm:py-20">
-              <div aria-hidden="true" className="absolute inset-0 -mt-72 sm:-mt-32 md:mt-0">
+            <div className="relative overflow-hidden rounded-2xl bg-lime-50 px-6 py-10 shadow-xl sm:px-12 sm:py-20">
+              <video src="https://cdn.cosmos.so/adbcfc79-4c32-4229-a5c6-a63a63d65d4e.mp4" autoPlay loop muted className="absolute top-0 left-0 w-full h-full object-cover z-0"></video>
+              {/* <div aria-hidden="true" className="absolute inset-0 -mt-72 sm:-mt-32 md:mt-0">
                 <svg
                   className="absolute inset-0 h-full w-full"
                   preserveAspectRatio="xMidYMid slice"
@@ -379,19 +380,19 @@ export default function Home() {
                   viewBox="0 0 1463 360"
                 >
                   <path
-                    className="text-lime-400 text-opacity-40"
+                    className="text-lime-100/20 backdrop-blur-2xl text-opacity-10"
                     fill="currentColor"
                     d="M-82.673 72l1761.849 472.086-134.327 501.315-1761.85-472.086z"
                   />
                   <path
-                    className="text-lime-600 text-opacity-40"
+                    className="text-lime-50/20 backdrop-blur-2xl text-opacity-40"
                     fill="currentColor"
                     d="M-217.088 544.086L1544.761 72l134.327 501.316-1761.849 472.086z"
                   />
                 </svg>
-              </div>
-              <div className="relative">
-                <div className="sm:text-center">
+              </div> */}
+              <div className="relative z-20">
+                <div className="sm:text-center mix-blend-difference">
                   <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
                     Get notified when we&rsquo;re launching.
                   </h2>
@@ -408,19 +409,21 @@ export default function Home() {
                     <input
                       id="cta-email"
                       type="email"
-                      className="block w-full rounded-md border border-transparent px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-lime-500"
+                      className="block w-full rounded-md border border-transparent px-5 py-3 text-base text-white placeholder-gray-500 shadow-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-lime-500 backdrop-blur-2xl bg-white/10"
                       placeholder="Enter your email"
                     />
                   </div>
                   <div className="mt-4 sm:mt-0 sm:ml-3">
                     <button
                       type="submit"
-                      className="block w-full rounded-md border border-transparent bg-gray-900 px-5 py-3 text-base font-medium text-white shadow hover:bg-black focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-lime-500 sm:px-10"
+                      className="block w-full rounded-md border border-transparent bg-lime-500 px-5 py-3 text-base font-medium text-white shadow hover:bg-black focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-lime-500 sm:px-10"
                     >
                       Notify me
                     </button>
                   </div>
                 </form>
+              </div>
+              <div className="absolute inset-0 bg-white/5 backdrop-blur-sm w-full h-full z-10">
               </div>
             </div>
           </div>
