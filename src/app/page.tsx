@@ -90,7 +90,7 @@ const footerNavigation = {
 
 export default function Home() {
   return (
-    <div className="bg-white">
+    <div className="bg-lime-50">
       <main>
         {/* Hero section */}
         <div className="overflow-hidden pt-8 sm:pt-12 lg:relative lg:py-48">
@@ -106,10 +106,10 @@ export default function Home() {
               <div className="mt-20">
                 <div>
                   <a href="#" className="inline-flex space-x-4">
-                    <span className="rounded bg-lime-50 px-2.5 py-1 text-sm font-semibold text-lime-500">
+                    <span className="rounded bg-lime-50 px-2.5 py-1 text-sm font-semibold text-lime-800">
                       What's new
                     </span>
-                    <span className="inline-flex items-center space-x-1 text-sm font-medium text-lime-500">
+                    <span className="inline-flex items-center space-x-1 text-sm font-medium text-lime-800">
                       <span>Just shipped v0.1.0</span>
                       <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
                     </span>
@@ -166,7 +166,7 @@ export default function Home() {
           <div className="sm:mx-auto sm:max-w-3xl sm:px-6">
             <div className="py-12 sm:relative sm:mt-12 sm:py-16 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
               <div className="hidden sm:block">
-                <div className="absolute inset-y-0 left-1/2 w-screen rounded-l-3xl bg-gray-50 lg:left-80 lg:right-0 lg:w-full" />
+                <div className="absolute inset-y-0 left-1/2 w-screen rounded-l-3xl bg-zinc-800 lg:left-80 lg:right-0 lg:w-full" />
                 <svg
                   className="absolute top-8 right-1/2 -mr-3 lg:left-0 lg:m-0"
                   width={404}
@@ -206,7 +206,7 @@ export default function Home() {
           <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:items-start lg:gap-24 lg:px-8">
             <div className="relative sm:py-16 lg:py-0">
               <div aria-hidden="true" className="hidden sm:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-screen">
-                <div className="absolute inset-y-0 right-1/2 w-full rounded-r-3xl bg-black lg:right-72" />
+                <div className="absolute inset-y-0 right-1/2 w-full rounded-r-3xl bg-zinc-800 lg:right-72" />
                 <svg
                   className="absolute top-8 left-1/2 -ml-3 lg:-right-8 lg:left-auto lg:top-12"
                   width={404}
@@ -250,7 +250,7 @@ export default function Home() {
                     <blockquote className="mt-8">
                       <div className="relative text-lg font-medium text-white md:flex-grow">
                         <svg
-                          className="absolute top-0 left-0 h-8 w-8 -translate-x-3 -translate-y-2 transform text-lime-400"
+                          className="absolute top-0 left-0 h-8 w-8 -translate-x-3 -translate-y-2 transform text-zinc-800"
                           fill="currentColor"
                           viewBox="0 0 32 32"
                           aria-hidden="true"
@@ -264,7 +264,7 @@ export default function Home() {
                       </div>
 
                       <footer className="mt-4">
-                        <p className="text-base font-semibold text-lime-200">Sarah Williams, CEO at Workcation</p>
+                        <p className="text-base font-semibold text-white mix-blend-difference">Sarah Williams, CEO at Workcation</p>
                       </footer>
                     </blockquote>
                   </div>
@@ -339,7 +339,7 @@ export default function Home() {
               </div>
               <div className="mt-12 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
                 {logos.map((logo) => (
-                  <div key={logo.name} className="col-span-1 flex justify-center bg-gradient-to-b from-zinc-900/50 to-black py-8 px-8 rounded-lg">
+                  <div key={logo.name} className="col-span-1 flex justify-center bg-gradient-to-b from-zinc-800/80 to-zinc-800 py-8 px-8 rounded-lg">
                     <img className="max-h-12" src={logo.url} alt={logo.name} />
                   </div>
                 ))}
@@ -351,7 +351,7 @@ export default function Home() {
         {/* CTA section */}
         <div className="relative mt-24 sm:mt-32 sm:py-16">
           <div aria-hidden="true" className="hidden sm:block">
-            <div className="absolute inset-y-0 left-0 w-1/2 rounded-r-3xl bg-gray-50" />
+            <div className="absolute inset-y-0 left-0 w-1/2 rounded-r-3xl bg-zinc-800" />
             <svg className="absolute top-8 left-1/2 -ml-3" width={404} height={392} fill="none" viewBox="0 0 404 392">
               <defs>
                 <pattern
@@ -428,7 +428,7 @@ export default function Home() {
       </main>
 
       {/* Footer section */}
-      <footer className="mt-24 bg-zinc-950 sm:mt-12">
+      <footer className="mt-24 bg-zinc-800 sm:mt-12">
         <div className="mx-auto max-w-md overflow-hidden py-12 px-6 sm:max-w-3xl lg:max-w-7xl lg:px-8">
           <nav className="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
             {footerNavigation.main.map((item) => (
