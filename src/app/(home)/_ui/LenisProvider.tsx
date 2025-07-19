@@ -1,5 +1,5 @@
-import React from 'react'
-import ReactLenis from 'lenis/react'
+import React from 'react';
+import ReactLenis from 'lenis/react';
 
 const LenisProvider = ({ children }: { children: React.ReactNode }) => {
     return (
@@ -9,4 +9,4 @@ const LenisProvider = ({ children }: { children: React.ReactNode }) => {
     )
 }
 
-export default LenisProvider
+export default LenisProvider;
