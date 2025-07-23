@@ -1,5 +1,7 @@
 import { ChevronRightIcon, StarIcon } from '@heroicons/react/20/solid'
 import LenisProvider from './_ui/LenisProvider';
+import Hero from './_ui/Hero';
+import TitleHero from './_ui/TitleHero';
 
 const stats = [
   { label: 'Founded', value: '2021' },
@@ -118,12 +120,7 @@ export default function Home() {
                     </a>
                   </div>
                   <div className="mt-6 sm:max-w-xl">
-                    <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-                      Issue management for growing teams
-                    </h1>
-                    <p className="mt-6 text-xl text-gray-500">
-                      Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
-                    </p>
+                    <TitleHero />
                   </div>
                   <form action="#" className="mt-12 sm:flex sm:w-full sm:max-w-lg">
                     <div className="min-w-0 flex-1">
@@ -196,7 +193,7 @@ export default function Home() {
                     src="https://cdn.cosmos.so/f6fcabe2-8c26-452f-bfde-96b95fcf2e58?format=jpeg"
                     alt=""
                   /> */}
-                  <video muted autoPlay loop src="https://cdn.cosmos.so/c4d37de1-365e-4b4c-bd42-3dd0df8708f9.mp4" className="w-full rounded-md shadow-xl ring-1 ring-black/20 ring-opacity-5 lg:h-full lg:w-full lg:object-cover"></video>
+                  <Hero />
                 </div>
               </div>
             </div>
