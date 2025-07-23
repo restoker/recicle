@@ -11,7 +11,7 @@ export const confirmToken = async (token: string) => {
         const data = await resp.json();
         if (data.statusCode) {
             if (data.message === 'Validation failed (uuid is expected)') {
-                return { ok: false, msg: 'El formato del token no es valido' };
+                return { ok: false, msg: 'El token no es valido' };
             };
 
             return { ok: false, msg: data.message };

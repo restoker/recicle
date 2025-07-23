@@ -43,11 +43,11 @@ const EmailVerificationForm = () => {
     return (
         <>
             {
-                loading && (
+                loading ? (
                     <div className="flex items-center justify-center h-screen bg-white/5 backdrop-blur-md">
                         <p className="text-2xl font-bold text-green-950">Verificando...</p>
                     </div>
-                )
+                ) : null
             }
             <div aria-hidden="true" className="relative rounded-lg">
                 <img
