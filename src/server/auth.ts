@@ -13,7 +13,7 @@ export const { handlers, auth, signIn, signOut, unstable_update } = NextAuth({
     callbacks: {
         async jwt({ token, user }) {
             if (!token.sub) return token;
-            const existUser = await fetch("http://localhost:3000/api/auth/login", {
+            const existUser = await fetch("http://localhost:3000/users/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -25,17 +25,17 @@ export const { handlers, auth, signIn, signOut, unstable_update } = NextAuth({
             });
             const existUserJson = await existUser.json();
             if (!existUserJson) return token;
-            const existsAccount = await fetch("http://localhost:3000/api/auth/login", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    email: token.email,
-                    password: token.password,
-                }),
-            });
-            const existsAccountJson = await existsAccount.json();
+            // const existsAccount = await fetch("http://localhost:3000/api/auth/login", {
+            //     method: "POST",
+            //     headers: {
+            //         "Content-Type": "application/json",
+            //     },
+            //     body: JSON.stringify({
+            //         email: token.email,
+            //         password: token.password,
+            //     }),
+            // });
+            // const existsAccountJson = await existsAccount.json();
 
             // if (user) {
             //     token.isOauth = !!existsAccount;
@@ -44,9 +44,11 @@ export const { handlers, auth, signIn, signOut, unstable_update } = NextAuth({
             // console.log(existsAccount);
             token.name = existUserJson.name;
             token.email = existUserJson.email;
-            token.role = existUserJson.role;
-            token.isTwoFactorEnabled = existUserJson.twoFactorEnabled;
+            token.roles = existUserJson.roles;
+            token.two_factor_enabled = existUserJson.two_factor_enabled;
             token.image = existUserJson.image;
+            token.verified = existUserJson.verified;
+            token.isActive = existUserJson.isActive;
 
             return token;
 
@@ -55,14 +57,16 @@ export const { handlers, auth, signIn, signOut, unstable_update } = NextAuth({
             if (session && token.sub) {
                 session.user.id = token.sub;
             }
-            if (session.user && token.role) {
-                session.user.role = token.role as string;
+            if (session.user && token.roles) {
+                session.user.roles = token.roles as string[];
             }
             if (session.user) {
-                session.user.isTwoFactorEnabled = token.isTwoFactorEnabled as boolean;
+                session.user.two_factor_enabled = token.two_factor_enabled as boolean;
                 session.user.name = token.name;
                 session.user.email = token.email as string;
                 session.user.image = token.image as string;
+                session.user.verified = token.verified as boolean;
+                session.user.isActive = token.isActive as boolean;
             }
             return session;
         },
@@ -78,9 +82,10 @@ export const { handlers, auth, signIn, signOut, unstable_update } = NextAuth({
                 const validatedFields = loginSchema.safeParse(credentials);
 
                 if (validatedFields.success) {
+
                     const { email, password, } = validatedFields.data;
 
-                    const user = await fetch("http://localhost:3000/api/auth/login", {
+                    const user = await fetch("http://localhost:3000/users/login", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -90,6 +95,7 @@ export const { handlers, auth, signIn, signOut, unstable_update } = NextAuth({
                             password,
                         }),
                     });
+
                     const userJson = await user.json();
 
                     if (!userJson || !userJson.password) return null;
@@ -98,7 +104,9 @@ export const { handlers, auth, signIn, signOut, unstable_update } = NextAuth({
                     const passCorrect = await bcrypt.compare(password, userJson.password);
 
                     if (!passCorrect) return null;
+
                     const { password: otro, ...rest } = userJson;
+
                     return rest;
                 }
                 return null;
