@@ -31,7 +31,7 @@ const EmailVerificationForm = () => {
         if (resp.ok) {
             setLoading(false);
             setSuccess(resp.msg);
-            router.push('/auth/login')
+            // router.push('/auth/login')
         }
 
     }, []);
